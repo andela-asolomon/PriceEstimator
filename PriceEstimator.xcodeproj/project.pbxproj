@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		554FCF3A1A69895300BDFF54 /* FormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554FCF391A69895300BDFF54 /* FormTableViewController.swift */; };
+		554FCF3C1A698A4500BDFF54 /* EstimatorAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554FCF3B1A698A4500BDFF54 /* EstimatorAPI.swift */; };
 		556FE3481A6949D80020519B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556FE3471A6949D80020519B /* AppDelegate.swift */; };
 		556FE34A1A6949D80020519B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556FE3491A6949D80020519B /* ViewController.swift */; };
 		556FE34D1A6949D80020519B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556FE34B1A6949D80020519B /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		554FCF391A69895300BDFF54 /* FormTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTableViewController.swift; sourceTree = "<group>"; };
+		554FCF3B1A698A4500BDFF54 /* EstimatorAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimatorAPI.swift; sourceTree = "<group>"; };
 		556FE3421A6949D80020519B /* PriceEstimator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PriceEstimator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		556FE3461A6949D80020519B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		556FE3471A6949D80020519B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 				556FE3471A6949D80020519B /* AppDelegate.swift */,
 				556FE3491A6949D80020519B /* ViewController.swift */,
 				556FE34B1A6949D80020519B /* Main.storyboard */,
+				554FCF391A69895300BDFF54 /* FormTableViewController.swift */,
+				554FCF3B1A698A4500BDFF54 /* EstimatorAPI.swift */,
 				556FE34E1A6949D80020519B /* Images.xcassets */,
 				556FE3501A6949D80020519B /* LaunchScreen.xib */,
 				556FE3451A6949D80020519B /* Supporting Files */,
@@ -213,7 +219,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				556FE34A1A6949D80020519B /* ViewController.swift in Sources */,
+				554FCF3A1A69895300BDFF54 /* FormTableViewController.swift in Sources */,
 				556FE3481A6949D80020519B /* AppDelegate.swift in Sources */,
+				554FCF3C1A698A4500BDFF54 /* EstimatorAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +413,7 @@
 				556FE3631A6949D80020519B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		556FE3641A6949D80020519B /* Build configuration list for PBXNativeTarget "PriceEstimatorTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +422,7 @@
 				556FE3661A6949D80020519B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
