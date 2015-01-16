@@ -79,6 +79,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="checkItOutButton:" destination="CxN-IJ-8aX" eventType="touchUpInside" id="awz-fq-FZI"/>
+                                                        <segue destination="n6Y-HW-Nao" kind="modal" id="8GQ-QQ-XB0"/>
                                                     </connections>
                                                 </button>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your Zip Code " minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="1uS-19-Bmi">

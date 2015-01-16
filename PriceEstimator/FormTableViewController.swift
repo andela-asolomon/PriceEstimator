@@ -16,8 +16,26 @@ class FormTableViewController: UITableViewController {
     var api = EstimatorAPI()
     
     @IBAction func checkItOutButton(sender: UIButton) {
-        getEstimate()
-        clearLabels()
+        
+        var errorFied = ""
+        
+        if addressLabel.text == "" {
+            errorFied = "Address"
+        } else if zipCodeLabel.text == "" {
+            errorFied = "Zip Code"
+        }
+        
+        if errorFied != "" {
+            var alert = UIAlertController(title: "Oops", message: "We can't proceed as you forgot to fill in your \(errorFied). All fields are mandatory.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+        } else {
+            
+            getEstimate()
+            clearLabels()
+            
+        }
         
     }
     
