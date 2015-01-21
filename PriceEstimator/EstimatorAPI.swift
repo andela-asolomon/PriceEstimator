@@ -17,9 +17,6 @@ class EstimatorAPI: UIViewController {
     
     var delegate: EstimatorAPIProtocol?
     
-    var result = [Estimator]()
-    var offer : Int = 0
-    
     func query(address: String, zipCode: Int) {
         
         let encodedTerm = (address as NSString).stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!

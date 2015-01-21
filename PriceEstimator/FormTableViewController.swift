@@ -13,6 +13,8 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol {
     @IBOutlet weak var addressLabel: UITextField!
     @IBOutlet weak var zipCodeLabel: UITextField!
     
+//    @IBAction func checkItOutButton(sender: UIButton) {
+//    }
     var api : EstimatorAPI = EstimatorAPI()
     
     var searchResultsData : AnyObject = []
@@ -40,6 +42,7 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol {
             var zipCode: Int? =  zipCodeLabel.text.toInt()
             
             api.query(address!, zipCode: zipCode!)
+//            clearLabels()
         }
     }
     
@@ -72,9 +75,8 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol {
     // In a storyboard-based application, you will often want to do a little 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "showOffer") {
-            var Ans = "Ayoola"
             let svc = segue.destinationViewController as OfferViewController
-            svc.numb = Ans
+            svc.numb = addressLabel.text
         }
     }
 }

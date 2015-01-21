@@ -26,6 +26,8 @@ class OfferViewController: UIViewController {
         blurEffectView.frame = view.bounds
         backgroundImage.addSubview(blurEffectView)
         
+        offerLabel.text = numb
+        
     }
 
     override func didReceiveMemoryWarning() {
