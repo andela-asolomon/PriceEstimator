@@ -10,11 +10,13 @@
 		554FCF3A1A69895300BDFF54 /* FormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554FCF391A69895300BDFF54 /* FormTableViewController.swift */; };
 		554FCF3C1A698A4500BDFF54 /* EstimatorAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554FCF3B1A698A4500BDFF54 /* EstimatorAPI.swift */; };
 		556FE3481A6949D80020519B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556FE3471A6949D80020519B /* AppDelegate.swift */; };
-		556FE34A1A6949D80020519B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556FE3491A6949D80020519B /* ViewController.swift */; };
 		556FE34D1A6949D80020519B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556FE34B1A6949D80020519B /* Main.storyboard */; };
 		556FE34F1A6949D80020519B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 556FE34E1A6949D80020519B /* Images.xcassets */; };
 		556FE3521A6949D80020519B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 556FE3501A6949D80020519B /* LaunchScreen.xib */; };
 		556FE35E1A6949D80020519B /* PriceEstimatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556FE35D1A6949D80020519B /* PriceEstimatorTests.swift */; };
+		55A86C511A6D717600250E3E /* OfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A86C501A6D717600250E3E /* OfferViewController.swift */; };
+		55BD5ACE1A6E5BE10052571A /* Estimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD5ACD1A6E5BE10052571A /* Estimator.swift */; };
+		55BD5AD01A6EAF370052571A /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD5ACF1A6EAF370052571A /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,13 +35,15 @@
 		556FE3421A6949D80020519B /* PriceEstimator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PriceEstimator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		556FE3461A6949D80020519B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		556FE3471A6949D80020519B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		556FE3491A6949D80020519B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		556FE34C1A6949D80020519B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		556FE34E1A6949D80020519B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		556FE3511A6949D80020519B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		556FE3571A6949D80020519B /* PriceEstimatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PriceEstimatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		556FE35C1A6949D80020519B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		556FE35D1A6949D80020519B /* PriceEstimatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceEstimatorTests.swift; sourceTree = "<group>"; };
+		55A86C501A6D717600250E3E /* OfferViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferViewController.swift; sourceTree = "<group>"; };
+		55BD5ACD1A6E5BE10052571A /* Estimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Estimator.swift; sourceTree = "<group>"; };
+		55BD5ACF1A6EAF370052571A /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +86,10 @@
 			isa = PBXGroup;
 			children = (
 				556FE3471A6949D80020519B /* AppDelegate.swift */,
-				556FE3491A6949D80020519B /* ViewController.swift */,
 				556FE34B1A6949D80020519B /* Main.storyboard */,
+				55BD5ACF1A6EAF370052571A /* WebViewController.swift */,
+				55BD5ACD1A6E5BE10052571A /* Estimator.swift */,
+				55A86C501A6D717600250E3E /* OfferViewController.swift */,
 				554FCF391A69895300BDFF54 /* FormTableViewController.swift */,
 				554FCF3B1A698A4500BDFF54 /* EstimatorAPI.swift */,
 				556FE34E1A6949D80020519B /* Images.xcassets */,
@@ -218,10 +224,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				556FE34A1A6949D80020519B /* ViewController.swift in Sources */,
 				554FCF3A1A69895300BDFF54 /* FormTableViewController.swift in Sources */,
+				55BD5AD01A6EAF370052571A /* WebViewController.swift in Sources */,
+				55A86C511A6D717600250E3E /* OfferViewController.swift in Sources */,
 				556FE3481A6949D80020519B /* AppDelegate.swift in Sources */,
 				554FCF3C1A698A4500BDFF54 /* EstimatorAPI.swift in Sources */,
+				55BD5ACE1A6E5BE10052571A /* Estimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

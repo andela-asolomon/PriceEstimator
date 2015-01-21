@@ -7,39 +7,38 @@
 //
 
 import Foundation
+import UIKit
 
-class EstimatorAPI {
+protocol EstimatorAPIProtocol {
+    func JSONAPIResults(results: AnyObject)
+}
+
+class EstimatorAPI: UIViewController {
     
-    func query(address: String?, zipCode: Int?){
+    var delegate: EstimatorAPIProtocol?
+    
+    var result = [Estimator]()
+    var offer : Int = 0
+    
+    func query(address: String, zipCode: Int) {
         
-        if address == nil {
-            println("nil")
-            return
-        }
+        let encodedTerm = (address as NSString).stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+        let urlPath = "https://pure-reef-1653.herokuapp.com/estimate?address1=\(encodedTerm)&address2=&zip=\(zipCode)"
+        let queue: NSOperationQueue = NSOperationQueue()
         
-        let encodedTerm = (address! as NSString).stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-        let urlPath = "https://pure-reef-1653.herokuapp.com/estimate?address1=\(encodedTerm)&address2=&zip=\(zipCode!)"
-        let url = NSURL(string: urlPath)
-        let request = NSURLRequest(URL: url!)
+        let estimateUrl = NSURL(string: urlPath)
+        let request = NSURLRequest(URL: estimateUrl!)
         
-        
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response, data, error) -> Void in
-            if error != nil {
-                println("FourSquare Error: \(error)")
-                return
+        NSURLConnection.sendAsynchronousRequest(request, queue: queue) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+            var error: AutoreleasingUnsafeMutablePointer<NSError?> = nil
+            
+            let results: AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: error) as AnyObject!
+            
+            if results.count > 0 {
+                self.delegate?.JSONAPIResults(results)
+            } else {
+                println(error)
             }
-            
-            let results: AnyObject! = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil)
-            if results == nil {
-                println("No data \(error)")
-                return
-            }
-            
-            let currency: NSString = results["currency"] as String
-            let offer: Int = results["offer"] as Int
-            
-            println("The Estimate of your house is \(offer) \(currency)")
         }
-
     }
 }

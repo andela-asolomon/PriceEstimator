@@ -8,14 +8,18 @@
 
 import UIKit
 
-class FormTableViewController: UITableViewController {
-    
+class FormTableViewController: UITableViewController, EstimatorAPIProtocol {
+
     @IBOutlet weak var addressLabel: UITextField!
     @IBOutlet weak var zipCodeLabel: UITextField!
     
-    var api = EstimatorAPI()
+    var api : EstimatorAPI = EstimatorAPI()
+    
+    var searchResultsData : AnyObject = []
     
     @IBAction func checkItOutButton(sender: UIButton) {
+        
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
         var errorFied = ""
         
@@ -32,33 +36,30 @@ class FormTableViewController: UITableViewController {
             
         } else {
             
-            getEstimate()
-            clearLabels()
+            var address: String? = addressLabel.text
+            var zipCode: Int? =  zipCodeLabel.text.toInt()
             
+            api.query(address!, zipCode: zipCode!)
         }
-        
     }
     
-    func getEstimate(){
-        var address: String? = addressLabel.text
-        var zipCode: Int? =  zipCodeLabel.text.toInt()
-        
-        api.query(address, zipCode: zipCode)
+    func JSONAPIResults(results: AnyObject) {
+        dispatch_async(dispatch_get_main_queue(), {
+            self.searchResultsData = results
+        })
     }
     
     func clearLabels(){
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        
         addressLabel.text = ""
         zipCodeLabel.text = ""
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.api.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,10 +69,12 @@ class FormTableViewController: UITableViewController {
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // In a storyboard-based application, you will often want to do a little 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "showOffer") {
+            var Ans = "Ayoola"
+            let svc = segue.destinationViewController as OfferViewController
+            svc.numb = Ans
+        }
     }
-
 }
