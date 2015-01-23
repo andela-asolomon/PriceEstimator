@@ -12,9 +12,7 @@ import UIKit
 class WebViewController: UIViewController {
     
     @IBOutlet weak var webView: UIWebView!
-    
-    
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var loader: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +33,11 @@ class WebViewController: UIViewController {
     }
     
     func webViewDidStartLoad(_: UIWebView) {
-        spinner.startAnimating()
+        loader.startAnimating()
     }
     
     func webViewDidFinishLoad(_: UIWebView) {
-        spinner.stopAnimating()
+        loader.stopAnimating()
     }
     
     

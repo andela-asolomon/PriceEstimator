@@ -13,56 +13,66 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol {
     @IBOutlet weak var addressLabel: UITextField!
     @IBOutlet weak var zipCodeLabel: UITextField!
     
-//    @IBAction func checkItOutButton(sender: UIButton) {
-//    }
     var api : EstimatorAPI = EstimatorAPI()
-    
     var searchResultsData : AnyObject = []
+    var currency: String = ""
+    
+    let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
     
     @IBAction func checkItOutButton(sender: UIButton) {
         
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        
-        var errorFied = ""
+        var errorField = ""
         
         if addressLabel.text == "" {
-            errorFied = "Address"
+            errorField = "Address"
         } else if zipCodeLabel.text == "" {
-            errorFied = "Zip Code"
+            errorField = "Zip Code"
         }
         
-        if errorFied != "" {
-            var alert = UIAlertController(title: "Oops", message: "We can't proceed as you forgot to fill in your \(errorFied). All fields are mandatory.", preferredStyle: UIAlertControllerStyle.Alert)
+        if errorField != "" {
+            activityIndicator.stopAnimating()
+            var alert = UIAlertController(title: "Oops", message: "We can't proceed as you forgot to fill in your \(errorField). All fields are mandatory.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
             
         } else {
             
-            var address: String? = addressLabel.text
-            var zipCode: Int? =  zipCodeLabel.text.toInt()
+            var address: String = addressLabel.text
+            var zipCode: Int = zipCodeLabel.text.toInt()!
             
-            api.query(address!, zipCode: zipCode!)
-//            clearLabels()
+            api.query(address, zipCode: zipCode)
+            activityIndicator.startAnimating()
         }
     }
     
     func JSONAPIResults(results: AnyObject) {
         dispatch_async(dispatch_get_main_queue(), {
             self.searchResultsData = results
+            self.currency = results["currency"] as String
+            
+            self.performSegueWithIdentifier("showOffer", sender: nil)
         })
     }
     
+    
     func clearLabels(){
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-        
         addressLabel.text = ""
         zipCodeLabel.text = ""
+        activityIndicator.stopAnimating()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.api.delegate = self
+        
+        activityIndicator.center = self.view.center
+        activityIndicator.color = UIColor(red: 255.0/255.0, green: 89.0/255.0, blue: 20.0/255.0, alpha: 1)
+        activityIndicator.hidden = true
+        self.view.addSubview(activityIndicator)
+        
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,8 +85,10 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol {
     // In a storyboard-based application, you will often want to do a little 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "showOffer") {
-            let svc = segue.destinationViewController as OfferViewController
-            svc.numb = addressLabel.text
+            clearLabels()
+            if self.searchResultsData.count != 0 {
+                (segue.destinationViewController as OfferViewController).toPass = currency
+            }
         }
     }
 }
