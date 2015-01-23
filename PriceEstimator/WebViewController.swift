@@ -14,11 +14,18 @@ class WebViewController: UIViewController {
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var loader: UIActivityIndicatorView!
     
+    let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        activityIndicator.center = self.view.center
+        activityIndicator.color = UIColor(red: 255.0/255.0, green: 89.0/255.0, blue: 20.0/255.0, alpha: 1)
+        self.view.addSubview(activityIndicator)
         // Do any additional setup after loading the view.
         loadAddress()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -33,11 +40,11 @@ class WebViewController: UIViewController {
     }
     
     func webViewDidStartLoad(_: UIWebView) {
-        loader.startAnimating()
+        activityIndicator.startAnimating()
     }
     
     func webViewDidFinishLoad(_: UIWebView) {
-        loader.stopAnimating()
+        activityIndicator.stopAnimating()
     }
     
     

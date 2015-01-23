@@ -133,16 +133,22 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hNO-yT-oQh">
                                 <rect key="frame" x="45" y="102" width="231" height="242"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1234567890" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apJ-fT-gSw">
+                                        <rect key="frame" x="71" y="159" width="137" height="61"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="23"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The Estimated worth of your house is" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXe-kX-JxM">
                                         <rect key="frame" x="40" y="15" width="150" height="115"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1234567890" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apJ-fT-gSw">
-                                        <rect key="frame" x="47" y="160" width="137" height="61"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="23"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPj-AK-IQy">
+                                        <rect key="frame" x="40" y="178" width="11" height="24"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -195,14 +201,7 @@
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VWy-Kj-LkX">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="delegate" destination="76q-uN-zOD" id="SmJ-w5-ouB"/>
-                                </connections>
                             </webView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="76q-uN-zOD">
-                                <rect key="frame" x="142" y="265" width="37" height="37"/>
-                                <color key="color" red="1" green="0.3411764706" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -210,7 +209,6 @@
                         <barButtonItem key="backBarButtonItem" title="Offer" id="9Xm-cs-CyJ"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="loader" destination="76q-uN-zOD" id="JYG-pb-Agx"/>
                         <outlet property="webView" destination="VWy-Kj-LkX" id="jT7-LU-Frs"/>
                     </connections>
                 </viewController>

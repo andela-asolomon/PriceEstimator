@@ -16,6 +16,7 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol {
     var api : EstimatorAPI = EstimatorAPI()
     var searchResultsData : AnyObject = []
     var currency: String = ""
+    var offer: Int = 0
     
     let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
     
@@ -49,6 +50,7 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol {
         dispatch_async(dispatch_get_main_queue(), {
             self.searchResultsData = results
             self.currency = results["currency"] as String
+            self.offer = results["offer"] as Int
             
             self.performSegueWithIdentifier("showOffer", sender: nil)
         })
@@ -86,8 +88,10 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "showOffer") {
             clearLabels()
-            if self.searchResultsData.count != 0 {
-                (segue.destinationViewController as OfferViewController).toPass = currency
+            if let svc = segue.destinationViewController as? OfferViewController {
+                svc.toPass = currency
+                svc.offer = self.offer
+                println("offer:  \(svc.offer)")
             }
         }
     }

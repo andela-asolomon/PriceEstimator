@@ -14,6 +14,7 @@ class OfferViewController: UIViewController {
     @IBOutlet weak var offerLabel: UILabel!
     
     var toPass: String = ""
+    var offer: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,9 @@ class OfferViewController: UIViewController {
         blurEffectView.frame = view.bounds
         backgroundImage.addSubview(blurEffectView)
         
-        offerLabel.text = self.toPass
+        var solo: Int? = offerLabel.text?.toInt()
+        println("Solo: \(solo!)")
+        solo = offer
+        println("Offer: \(solo!)")
     }
 }
