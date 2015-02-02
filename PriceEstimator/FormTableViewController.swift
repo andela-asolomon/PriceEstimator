@@ -89,7 +89,6 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol {
         if (segue.identifier == "showOffer") {
             clearLabels()
             if let svc = segue.destinationViewController as? OfferViewController {
-                svc.toPass = currency
                 svc.offer = self.offer
                 println("offer:  \(svc.offer)")
             }

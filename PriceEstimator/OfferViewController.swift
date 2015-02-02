@@ -13,7 +13,6 @@ class OfferViewController: UIViewController {
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var offerLabel: UILabel!
     
-    var toPass: String = ""
     var offer: Int = 0
     
     override func viewDidLoad() {
@@ -25,9 +24,23 @@ class OfferViewController: UIViewController {
         blurEffectView.frame = view.bounds
         backgroundImage.addSubview(blurEffectView)
         
-        var solo: Int? = offerLabel.text?.toInt()
-        println("Solo: \(solo!)")
-        solo = offer
-        println("Offer: \(solo!)")
+        
+        var offerToString = String(offer)
+        var result = convertToUSD(offerToString)
+        offerLabel.text = "\(result)"
     }
+    
+    // MARK: - Converting the offer to USD
+    func convertToUSD(var result: String) -> String {
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+        formatter.locale = NSLocale(localeIdentifier: "en_US")
+        var numberFromField = (NSString(string: result).doubleValue)
+        result = formatter.stringFromNumber(numberFromField)!
+        
+        println(result)
+        
+        return result
+    }
+
 }
