@@ -17,6 +17,8 @@ class EstimatorAPI: UIViewController {
     
     var delegate: EstimatorAPIProtocol?
     
+    var results: AnyObject = "Try Again"
+    
     func query(address: String, zipCode: Int) {
         
         let encodedTerm = (address as NSString).stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
@@ -29,12 +31,14 @@ class EstimatorAPI: UIViewController {
         NSURLConnection.sendAsynchronousRequest(request, queue: queue) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
             var error: AutoreleasingUnsafeMutablePointer<NSError?> = nil
             
-            let results: AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: error) as AnyObject!
-            
-            if results.count > 0 {
-                self.delegate?.JSONAPIResults(results)
+            if let results: AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: error) as AnyObject! {
+                if results.count > 0 {
+                    self.delegate?.JSONAPIResults(results)
+                } else {
+                    println(error)
+                }
             } else {
-                println(error)
+                self.delegate?.JSONAPIResults(self.results)
             }
         }
     }

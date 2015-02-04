@@ -8,15 +8,16 @@
 
 import UIKit
 
-class FormTableViewController: UITableViewController, EstimatorAPIProtocol {
+class FormTableViewController: UITableViewController, EstimatorAPIProtocol, UITextFieldDelegate {
 
     @IBOutlet weak var addressLabel: UITextField!
     @IBOutlet weak var zipCodeLabel: UITextField!
     
+    var connectionIsAvailable : Connectivity = Connectivity()
+    
     var api : EstimatorAPI = EstimatorAPI()
     var searchResultsData : AnyObject = []
-    var currency: String = ""
-    var offer: Int = 0
+    var offer: Int?
     
     let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
     
@@ -38,19 +39,44 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol {
             
         } else {
             
-            var address: String = addressLabel.text
-            var zipCode: Int = zipCodeLabel.text.toInt()!
-            
-            api.query(address, zipCode: zipCode)
-            activityIndicator.startAnimating()
+            if connectionIsAvailable.isConnectedToNetwork() {
+                var address: String = addressLabel.text
+                var zipCode: Int = zipCodeLabel.text.toInt()!
+                
+                api.query(address, zipCode: zipCode)
+                activityIndicator.startAnimating()
+                
+            } else {
+                var alert = UIAlertController(title: "Oops", message: "Internet Connection is not enabled. Please go to settings", preferredStyle: UIAlertControllerStyle.Alert)
+                
+                var settingsAction = UIAlertAction(title: "Settings", style: .Default) { (_) -> Void in
+                    let settingsUrl = NSURL(string: UIApplicationOpenSettingsURLString)
+                    if let url = settingsUrl {
+                        UIApplication.sharedApplication().openURL(url)
+                    }
+                }
+                
+                alert.addAction(settingsAction)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
         }
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        let inverseSet = NSCharacterSet(charactersInString: "0123456789").invertedSet
+        
+        let components = string.componentsSeparatedByCharactersInSet(inverseSet)
+        
+        let filtered = join("", components)
+        
+        return string == filtered
     }
     
     func JSONAPIResults(results: AnyObject) {
         dispatch_async(dispatch_get_main_queue(), {
             self.searchResultsData = results
-            self.currency = results["currency"] as String
-            self.offer = results["offer"] as Int
+            self.offer = results["offer"] as? Int
             
             self.performSegueWithIdentifier("showOffer", sender: nil)
         })
@@ -67,6 +93,8 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol {
         super.viewDidLoad()
         
         self.api.delegate = self
+        
+        zipCodeLabel.delegate = self
         
         activityIndicator.center = self.view.center
         activityIndicator.color = UIColor(red: 255.0/255.0, green: 89.0/255.0, blue: 20.0/255.0, alpha: 1)
@@ -87,10 +115,15 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol {
     // In a storyboard-based application, you will often want to do a little 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "showOffer") {
-            clearLabels()
             if let svc = segue.destinationViewController as? OfferViewController {
-                svc.offer = self.offer
-                println("offer:  \(svc.offer)")
+                if self.offer == nil {
+                    var alert = UIAlertController(title: "Oops", message: "The Address and Zip Code you provided is not enough. Please try Again", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                } else {
+                    clearLabels()
+                    svc.offer = self.offer!
+                }
             }
         }
     }
