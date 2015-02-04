@@ -10,6 +10,7 @@ import UIKit
 
 class FormTableViewController: UITableViewController, EstimatorAPIProtocol, UITextFieldDelegate {
 
+    @IBOutlet weak var btnLabel: UIButton!
     @IBOutlet weak var addressLabel: UITextField!
     @IBOutlet weak var zipCodeLabel: UITextField!
     
@@ -103,6 +104,8 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol, UITe
         
         self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
         
+        btnLabel.layer.cornerRadius = 4
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -117,8 +120,10 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol, UITe
         if (segue.identifier == "showOffer") {
             if let svc = segue.destinationViewController as? OfferViewController {
                 if self.offer == nil {
-                    var alert = UIAlertController(title: "Oops", message: "The Address and Zip Code you provided is not enough. Please try Again", preferredStyle: UIAlertControllerStyle.Alert)
+                    activityIndicator.stopAnimating()
+                    var alert = UIAlertController(title: "Oops", message: "We could not find the estimate for the house you are looking for. Please try another one", preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                    alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
                 } else {
                     clearLabels()

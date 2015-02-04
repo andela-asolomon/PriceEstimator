@@ -12,6 +12,7 @@ class OfferViewController: UIViewController {
     
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var offerLabel: UILabel!
+    @IBOutlet weak var btnLabel: UIButton!
     
     var offer: Int = 0
     
@@ -28,6 +29,8 @@ class OfferViewController: UIViewController {
         var offerToString = String(offer)
         var result = convertToUSD(offerToString)
         offerLabel.text = "\(result)"
+        
+        btnLabel.layer.cornerRadius = 4
     }
     
     // MARK: - Converting the offer to USD
@@ -37,8 +40,6 @@ class OfferViewController: UIViewController {
         formatter.locale = NSLocale(localeIdentifier: "en_US")
         var numberFromField = (NSString(string: result).doubleValue)
         result = formatter.stringFromNumber(numberFromField)!
-        
-        println(result)
         
         return result
     }

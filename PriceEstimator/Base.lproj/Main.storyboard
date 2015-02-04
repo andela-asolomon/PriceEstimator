@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
     </dependencies>
     <scenes>
-        <!--Price Estimator-->
+        <!--Home Value Estimator-->
         <scene sceneID="sad-4b-U32">
             <objects>
                 <tableViewController id="CxN-IJ-8aX" customClass="FormTableViewController" customModule="PriceEstimator" customModuleProvider="target" sceneMemberID="viewController">
@@ -58,20 +58,18 @@
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Zip Code " minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1uS-19-Bmi">
                                                     <rect key="frame" x="16" y="161" width="286" height="30"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad"/>
                                                 </textField>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="House Address Here" minimumFontSize="10" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="l6n-k1-LvY">
                                                     <rect key="frame" x="16" y="69" width="286" height="30"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8c-uh-cNs">
                                                     <rect key="frame" x="16" y="226" width="289" height="64"/>
                                                     <color key="backgroundColor" red="1" green="0.34901960784313724" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="22"/>
                                                     <state key="normal" title="See Cash Value">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -92,11 +90,12 @@
                             <outlet property="delegate" destination="CxN-IJ-8aX" id="Naj-l3-ZyD"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Price Estimator" id="Wv8-j6-jAv">
+                    <navigationItem key="navigationItem" title="Home Value Estimator" id="Wv8-j6-jAv">
                         <barButtonItem key="backBarButtonItem" title="Home" id="lzz-JX-3AS"/>
                     </navigationItem>
                     <connections>
                         <outlet property="addressLabel" destination="l6n-k1-LvY" id="v7t-BH-AxZ"/>
+                        <outlet property="btnLabel" destination="y8c-uh-cNs" id="pCO-wp-wWW"/>
                         <outlet property="zipCodeLabel" destination="1uS-19-Bmi" id="0nn-Mt-v7h"/>
                         <segue destination="Kw0-6a-FVD" kind="push" identifier="showOffer" id="wAt-ZO-iMh"/>
                     </connections>
@@ -130,8 +129,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1234567890" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apJ-fT-gSw">
-                                        <rect key="frame" x="47" y="156" width="137" height="61"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="23"/>
+                                        <rect key="frame" x="28" y="157" width="175" height="37"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="27"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -144,9 +143,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4sH-iR-E01">
-                                <rect key="frame" x="137" y="474" width="47" height="36"/>
+                                <rect key="frame" x="16" y="474" width="289" height="64"/>
                                 <color key="backgroundColor" red="1" green="0.3411764705882353" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="22"/>
                                 <state key="normal" title="YES">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -163,12 +162,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backgroundImage" destination="3d7-kq-XjQ" id="SF6-v3-TCU"/>
+                        <outlet property="btnLabel" destination="4sH-iR-E01" id="xPb-5t-oQf"/>
                         <outlet property="offerLabel" destination="apJ-fT-gSw" id="LwL-6f-cAm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pYC-Y9-fSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1274" y="236"/>
+            <point key="canvasLocation" x="1269" y="229"/>
         </scene>
         <!--Sell Your House-->
         <scene sceneID="I11-Lh-eZm">
@@ -198,7 +198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wYb-io-d5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1622" y="236"/>
+            <point key="canvasLocation" x="1620" y="229"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZF4-a6-ylo">
