@@ -20,6 +20,9 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol, UITe
     var searchResultsData : AnyObject = []
     var offer: Int?
     
+    var address: String?
+    var zipCode: Int?
+    
     let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
     
     @IBAction func checkItOutButton(sender: UIButton) {
@@ -41,10 +44,10 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol, UITe
         } else {
             
             if connectionIsAvailable.isConnectedToNetwork() {
-                var address: String = addressLabel.text
-                var zipCode: Int = zipCodeLabel.text.toInt()!
+                address = addressLabel.text
+                zipCode = zipCodeLabel.text.toInt()!
                 
-                api.query(address, zipCode: zipCode)
+                api.query(address!, zipCode: zipCode!)
                 activityIndicator.startAnimating()
                 
             } else {
@@ -78,7 +81,6 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol, UITe
         dispatch_async(dispatch_get_main_queue(), {
             self.searchResultsData = results
             self.offer = results["offer"] as? Int
-            
             self.performSegueWithIdentifier("showOffer", sender: nil)
         })
     }
@@ -108,14 +110,7 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol, UITe
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "showOffer") {
             if let svc = segue.destinationViewController as? OfferViewController {
@@ -128,6 +123,8 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol, UITe
                 } else {
                     clearLabels()
                     svc.offer = self.offer!
+                    svc.zipCode = zipCode!
+                    svc.address = address!
                 }
             }
         }

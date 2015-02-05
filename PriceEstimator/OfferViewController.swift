@@ -14,6 +14,9 @@ class OfferViewController: UIViewController {
     @IBOutlet weak var offerLabel: UILabel!
     @IBOutlet weak var btnLabel: UIButton!
     
+    var address: String?
+    var zipCode: Int?
+    
     var offer: Int = 0
     
     override func viewDidLoad() {
@@ -24,7 +27,6 @@ class OfferViewController: UIViewController {
         var blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         backgroundImage.addSubview(blurEffectView)
-        
         
         var offerToString = String(offer)
         var result = convertToUSD(offerToString)
@@ -42,6 +44,16 @@ class OfferViewController: UIViewController {
         result = formatter.stringFromNumber(numberFromField)!
         
         return result
+    }
+    
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "passData") {
+            if var data = segue.destinationViewController as? WebViewController {
+                data.address = address!
+                data.zipCode = zipCode!
+            }
+        }
     }
 
 }
