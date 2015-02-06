@@ -68,13 +68,23 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol, UITe
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        let inverseSet = NSCharacterSet(charactersInString: "0123456789").invertedSet
         
-        let components = string.componentsSeparatedByCharactersInSet(inverseSet)
+        var result = true
         
-        let filtered = join("", components)
+        let prospectiveText = (textField.text as NSString).stringByReplacingCharactersInRange(range, withString: string)
         
-        return string == filtered
+        if countElements(string) > 0 {
+            let inverseSet = NSCharacterSet(charactersInString: "0123456789").invertedSet
+            let replaceStringIsLegal = string.rangeOfCharacterFromSet(inverseSet) == nil
+            
+            let resultingStringLengthIsLegal = countElements(prospectiveText) <= 5
+            
+            let components = string.componentsSeparatedByCharactersInSet(inverseSet)
+            
+            result = resultingStringLengthIsLegal && replaceStringIsLegal
+        }
+        
+        return result
     }
     
     func JSONAPIResults(results: AnyObject) {
