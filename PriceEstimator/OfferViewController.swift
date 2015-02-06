@@ -16,11 +16,9 @@ class OfferViewController: UIViewController {
     @IBOutlet weak var callBtn: UIButton!
     
     @IBAction func callAction(sender: UIButton) {
-        var alert = UIAlertController(title: "Call", message: "Call Joor", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        var alert = UIAlertController(title: "Call Us", message: "Want to know the Exact Cash Value", preferredStyle: UIAlertControllerStyle.Alert)
         
         var callAction = UIAlertAction(title: "(800)-288-0275", style: .Default) { (_) -> Void in
-            
-            
             let phone = "tel://(800)-288-0275";
             let settingsUrl = NSURL(string: phone)
             if let url = settingsUrl {
@@ -30,7 +28,6 @@ class OfferViewController: UIViewController {
         
         alert.addAction(callAction)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
@@ -62,7 +59,7 @@ class OfferViewController: UIViewController {
         formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
         formatter.locale = NSLocale(localeIdentifier: "en_US")
         var numberFromField = (NSString(string: result).doubleValue)
-        result = formatter.stringFromNumber(numberFromField)!
+        result = formatter.stringFromNumber(numberFromField)!.stringByDeletingPathExtension
         
         return result
     }

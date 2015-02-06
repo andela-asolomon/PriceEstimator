@@ -128,7 +128,7 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol, UITe
                     }
                     
                     alert.addAction(callAction)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                    alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
                 } else {
                     clearLabels()
