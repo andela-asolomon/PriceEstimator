@@ -116,9 +116,19 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol, UITe
             if let svc = segue.destinationViewController as? OfferViewController {
                 if self.offer == nil {
                     activityIndicator.stopAnimating()
-                    var alert = UIAlertController(title: "Oops", message: "We could not find the estimate for the house you are looking for. Please try another one", preferredStyle: UIAlertControllerStyle.Alert)
+                    var alert = UIAlertController(title: "Oops", message: "We could not find the estimate for the house you are looking for. Please contact our customer service for more info.", preferredStyle: UIAlertControllerStyle.Alert)
+                    
+                    var callAction = UIAlertAction(title: "(800)-288-0275", style: .Default) { (_) -> Void in
+                        
+                        let phone = "tel://(800)-288-0275";
+                        let settingsUrl = NSURL(string: phone)
+                        if let url = settingsUrl {
+                            UIApplication.sharedApplication().openURL(url)
+                        }
+                    }
+                    
+                    alert.addAction(callAction)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-                    alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
                 } else {
                     clearLabels()

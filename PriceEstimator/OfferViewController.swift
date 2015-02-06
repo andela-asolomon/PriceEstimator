@@ -13,6 +13,26 @@ class OfferViewController: UIViewController {
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var offerLabel: UILabel!
     @IBOutlet weak var btnLabel: UIButton!
+    @IBOutlet weak var callBtn: UIButton!
+    
+    @IBAction func callAction(sender: UIButton) {
+        var alert = UIAlertController(title: "Call", message: "Call Joor", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        
+        var callAction = UIAlertAction(title: "(800)-288-0275", style: .Default) { (_) -> Void in
+            
+            
+            let phone = "tel://(800)-288-0275";
+            let settingsUrl = NSURL(string: phone)
+            if let url = settingsUrl {
+                UIApplication.sharedApplication().openURL(url)
+            }
+        }
+        
+        alert.addAction(callAction)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
     
     var address: String?
     var zipCode: Int?
@@ -33,6 +53,7 @@ class OfferViewController: UIViewController {
         offerLabel.text = "\(result)"
         
         btnLabel.layer.cornerRadius = 4
+        callBtn.layer.cornerRadius = 4
     }
     
     // MARK: - Converting the offer to USD
