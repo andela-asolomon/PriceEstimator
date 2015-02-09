@@ -119,8 +119,11 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cafeloisl" translatesAutoresizingMaskIntoConstraints="NO" id="3d7-kq-XjQ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Want to know the exact Cash Value or sell your house?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwH-cd-PXU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Want to know the exact Cash Value or sell your house?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwH-cd-PXU">
                                 <rect key="frame" x="67" y="309" width="200" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="IJb-bn-m3P"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -188,7 +191,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="4sH-iR-E01" secondAttribute="trailing" constant="14" id="65Z-yM-BtN"/>
+                            <constraint firstItem="gwH-cd-PXU" firstAttribute="leading" secondItem="Rgv-aR-gfX" secondAttribute="leading" constant="67" id="J1l-NK-24N"/>
+                            <constraint firstItem="O5u-CX-y98" firstAttribute="top" secondItem="gwH-cd-PXU" secondAttribute="bottom" constant="8" id="Squ-NN-goD"/>
                             <constraint firstItem="4sH-iR-E01" firstAttribute="top" secondItem="O5u-CX-y98" secondAttribute="bottom" constant="8" id="UdH-ae-FeE"/>
+                            <constraint firstAttribute="trailing" secondItem="gwH-cd-PXU" secondAttribute="trailing" constant="53" id="YFy-cS-9o8"/>
                             <constraint firstItem="3d7-kq-XjQ" firstAttribute="top" secondItem="Rgv-aR-gfX" secondAttribute="top" id="Z4Z-A4-rGp"/>
                             <constraint firstAttribute="trailing" secondItem="O5u-CX-y98" secondAttribute="trailing" constant="15" id="dsG-yG-L9L"/>
                             <constraint firstItem="4sH-iR-E01" firstAttribute="leading" secondItem="Rgv-aR-gfX" secondAttribute="leading" constant="17" id="fPg-yb-CB4"/>
