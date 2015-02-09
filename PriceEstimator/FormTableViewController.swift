@@ -45,7 +45,9 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol, UITe
             
             if connectionIsAvailable.isConnectedToNetwork() {
                 address = addressLabel.text
+                addressLabel.resignFirstResponder()
                 zipCode = zipCodeLabel.text.toInt()!
+                zipCodeLabel.resignFirstResponder()
                 
                 api.query(address!, zipCode: zipCode!)
                 activityIndicator.startAnimating()
