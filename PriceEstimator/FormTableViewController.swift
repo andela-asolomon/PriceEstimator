@@ -142,7 +142,7 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol, UITe
                     self.presentViewController(alert, animated: true, completion: nil)
                 } else {
                     clearLabels()
-                    svc.offer = self.offer!
+                    svc.offer = Double(self.offer!)
                     svc.zipCode = zipCode!
                     svc.address = address!
                 }

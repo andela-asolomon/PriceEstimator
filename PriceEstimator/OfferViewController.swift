@@ -14,9 +14,10 @@ class OfferViewController: UIViewController {
     @IBOutlet weak var offerLabel: UILabel!
     @IBOutlet weak var btnLabel: UIButton!
     @IBOutlet weak var callBtn: UIButton!
+    @IBOutlet weak var estimatedOfferByPercent: UILabel!
     
     @IBAction func callAction(sender: UIButton) {
-        var alert = UIAlertController(title: "Call Us", message: "Want to know the Exact Cash Value", preferredStyle: UIAlertControllerStyle.Alert)
+        var alert = UIAlertController(title: "Call Us", message: "We'll tell you the Exact Cash Value of your home and make you an offer to buy it", preferredStyle: UIAlertControllerStyle.Alert)
         
         var callAction = UIAlertAction(title: "(800)-288-0275", style: .Default) { (_) -> Void in
             let phone = "tel://(800)-288-0275";
@@ -34,7 +35,7 @@ class OfferViewController: UIViewController {
     var address: String?
     var zipCode: Int?
     
-    var offer: Int = 0
+    var offer: Double = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,9 +46,15 @@ class OfferViewController: UIViewController {
         blurEffectView.frame = view.bounds
         backgroundImage.addSubview(blurEffectView)
         
-        var offerToString = String(offer)
-        var result = convertToUSD(offerToString)
+        let roundUpOffer = roundUp(offer)
+        let offerToString = String(Int(roundUpOffer))
+        let result = convertToUSD(offerToString)
         offerLabel.text = "\(result)"
+        
+        let estimateByPercent = getSecondOffer(offer)
+        let estimateByPercentToString = String(Int(estimateByPercent))
+        let secondOffer = convertToUSD(estimateByPercentToString)
+        estimatedOfferByPercent.text = secondOffer
         
         btnLabel.layer.cornerRadius = 4
         callBtn.layer.cornerRadius = 4
@@ -62,6 +69,20 @@ class OfferViewController: UIViewController {
         result = formatter.stringFromNumber(numberFromField)!.stringByDeletingPathExtension
         
         return result
+    }
+    
+    
+    // MARK: - Calculate the second offer based on the responsed offer from API
+    func getSecondOffer(offer: Double) -> Double {
+        let percentAdded = offer * 20/100
+        let result = offer + percentAdded
+        let ans = roundUp(result)
+        return ans
+    }
+    
+    func roundUp(offer: Double) -> Double {
+        var roundedOffer = round(offer / 1000) * 1000
+        return roundedOffer
     }
     
     // MARK: - Navigation
