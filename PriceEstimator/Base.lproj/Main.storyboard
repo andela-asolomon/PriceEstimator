@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ShO-XJ-pM2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Home Value Estimator-->
@@ -28,15 +29,26 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZXy-3e-rQv" id="Va9-rC-dyl">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="9Ai-8a-HeZ">
-                                                    <rect key="frame" x="105" y="8" width="100" height="100"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How much is your house worth in  cash?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMB-I0-g2d">
-                                                    <rect key="frame" x="60" y="126" width="200" height="47"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How much is your house worth in  cash?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMB-I0-g2d">
+                                                    <rect key="frame" x="60" y="129" width="200" height="44"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="9Ai-8a-HeZ">
+                                                    <rect key="frame" x="105" y="8" width="100" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="YTq-mJ-YEm"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="NMB-I0-g2d" firstAttribute="leading" secondItem="Va9-rC-dyl" secondAttribute="leading" constant="60" id="0Qj-h8-maZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="NMB-I0-g2d" secondAttribute="trailing" constant="60" id="AC5-eF-lvL"/>
+                                                <constraint firstItem="9Ai-8a-HeZ" firstAttribute="top" secondItem="Va9-rC-dyl" secondAttribute="top" constant="8" id="E7h-Ji-my2"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="9Ai-8a-HeZ" secondAttribute="trailing" constant="107" id="bMn-r2-Ojp"/>
+                                                <constraint firstItem="9Ai-8a-HeZ" firstAttribute="leading" secondItem="Va9-rC-dyl" secondAttribute="leadingMargin" constant="97" id="grM-bF-d55"/>
+                                                <constraint firstAttribute="bottom" secondItem="NMB-I0-g2d" secondAttribute="bottom" constant="8" id="kxY-ih-4L5"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="308" id="D9N-hd-VMf">
@@ -44,24 +56,24 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="D9N-hd-VMf" id="Q9E-aD-yzS">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YI4-ox-Zuc">
-                                                    <rect key="frame" x="19" y="35" width="64" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YI4-ox-Zuc">
+                                                    <rect key="frame" x="19" y="34" width="64" height="22"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Zip Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8q-ve-7dI">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zip Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8q-ve-7dI">
                                                     <rect key="frame" x="19" y="126" width="68" height="22"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Zip Code " minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1uS-19-Bmi">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Zip Code " minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1uS-19-Bmi">
                                                     <rect key="frame" x="16" y="161" width="286" height="30"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad"/>
                                                 </textField>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="House Address Here" minimumFontSize="10" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="l6n-k1-LvY">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="House Address Here" minimumFontSize="10" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="l6n-k1-LvY">
                                                     <rect key="frame" x="16" y="69" width="286" height="30"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -85,8 +97,20 @@
                                             <color key="tintColor" red="1" green="0.3411764706" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="y8c-uh-cNs" secondAttribute="trailing" constant="15" id="7PV-OH-maH"/>
+                                                <constraint firstAttribute="trailing" secondItem="YI4-ox-Zuc" secondAttribute="trailing" constant="237" id="Dd0-Ph-oib"/>
+                                                <constraint firstAttribute="trailing" secondItem="y8q-ve-7dI" secondAttribute="trailing" constant="233" id="O9c-mu-HSQ"/>
+                                                <constraint firstItem="1uS-19-Bmi" firstAttribute="leading" secondItem="Q9E-aD-yzS" secondAttribute="leading" constant="16" id="OaX-XK-1wZ"/>
+                                                <constraint firstItem="YI4-ox-Zuc" firstAttribute="leading" secondItem="Q9E-aD-yzS" secondAttribute="leading" constant="19" id="X1a-Bv-2Nx"/>
+                                                <constraint firstAttribute="trailing" secondItem="l6n-k1-LvY" secondAttribute="trailing" constant="18" id="Xpg-co-KIB"/>
                                                 <constraint firstAttribute="bottom" secondItem="y8c-uh-cNs" secondAttribute="bottom" constant="18" id="fh7-Zx-Gkn"/>
+                                                <constraint firstItem="l6n-k1-LvY" firstAttribute="top" secondItem="YI4-ox-Zuc" secondAttribute="bottom" constant="13" id="ghE-p2-fnX"/>
+                                                <constraint firstItem="y8q-ve-7dI" firstAttribute="leading" secondItem="Q9E-aD-yzS" secondAttribute="leading" constant="19" id="hrq-yh-4qM"/>
+                                                <constraint firstItem="y8c-uh-cNs" firstAttribute="top" secondItem="1uS-19-Bmi" secondAttribute="bottom" constant="35" id="igz-7E-e26"/>
+                                                <constraint firstItem="1uS-19-Bmi" firstAttribute="top" secondItem="y8q-ve-7dI" secondAttribute="bottom" constant="13" id="kmg-fY-A9h"/>
                                                 <constraint firstItem="y8c-uh-cNs" firstAttribute="leading" secondItem="Q9E-aD-yzS" secondAttribute="leading" constant="16" id="kvm-x7-NfT"/>
+                                                <constraint firstItem="y8q-ve-7dI" firstAttribute="top" secondItem="l6n-k1-LvY" secondAttribute="bottom" constant="27" id="phE-2I-myl"/>
+                                                <constraint firstItem="l6n-k1-LvY" firstAttribute="leading" secondItem="Q9E-aD-yzS" secondAttribute="leading" constant="16" id="s8l-te-d0e"/>
+                                                <constraint firstAttribute="trailing" secondItem="1uS-19-Bmi" secondAttribute="trailing" constant="18" id="saD-YR-XEK"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
