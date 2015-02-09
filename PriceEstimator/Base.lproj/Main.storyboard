@@ -125,18 +125,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O5u-CX-y98">
-                                <rect key="frame" x="17" y="402" width="288" height="64"/>
-                                <color key="backgroundColor" red="0.50980392156862742" green="0.80000000000000004" blue="0.15686274509803921" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="22"/>
-                                <state key="normal" title="Call Us">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="callAction:" destination="Kw0-6a-FVD" eventType="touchUpInside" id="ooL-ag-cXW"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hNO-yT-oQh">
                                 <rect key="frame" x="17" y="72" width="288" height="242"/>
                                 <subviews>
@@ -181,13 +169,31 @@
                                     <segue destination="pEY-qb-HDz" kind="push" identifier="passData" id="a2I-hZ-ejw"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O5u-CX-y98">
+                                <rect key="frame" x="17" y="402" width="288" height="64"/>
+                                <color key="backgroundColor" red="0.50980392156862742" green="0.80000000000000004" blue="0.15686274509803921" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="HEK-bW-RSo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="22"/>
+                                <state key="normal" title="Call Us">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="callAction:" destination="Kw0-6a-FVD" eventType="touchUpInside" id="ooL-ag-cXW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="4sH-iR-E01" secondAttribute="trailing" constant="14" id="65Z-yM-BtN"/>
+                            <constraint firstItem="4sH-iR-E01" firstAttribute="top" secondItem="O5u-CX-y98" secondAttribute="bottom" constant="8" id="UdH-ae-FeE"/>
                             <constraint firstItem="3d7-kq-XjQ" firstAttribute="top" secondItem="Rgv-aR-gfX" secondAttribute="top" id="Z4Z-A4-rGp"/>
+                            <constraint firstAttribute="trailing" secondItem="O5u-CX-y98" secondAttribute="trailing" constant="15" id="dsG-yG-L9L"/>
                             <constraint firstItem="4sH-iR-E01" firstAttribute="leading" secondItem="Rgv-aR-gfX" secondAttribute="leading" constant="17" id="fPg-yb-CB4"/>
                             <constraint firstAttribute="trailing" secondItem="3d7-kq-XjQ" secondAttribute="trailing" id="nNu-PY-Qh1"/>
+                            <constraint firstItem="O5u-CX-y98" firstAttribute="leading" secondItem="Rgv-aR-gfX" secondAttribute="leading" constant="17" id="qB8-Jn-Ywu"/>
                             <constraint firstItem="GlZ-KM-zBQ" firstAttribute="top" secondItem="4sH-iR-E01" secondAttribute="bottom" constant="30" id="qcx-m2-KVP"/>
                             <constraint firstItem="GlZ-KM-zBQ" firstAttribute="top" secondItem="3d7-kq-XjQ" secondAttribute="bottom" id="sA7-4I-WAP"/>
                             <constraint firstItem="3d7-kq-XjQ" firstAttribute="leading" secondItem="Rgv-aR-gfX" secondAttribute="leading" id="wdi-mP-YY2"/>
@@ -220,19 +226,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VWy-Kj-LkX">
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWy-Kj-LkX">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="delegate" destination="pEY-qb-HDz" id="rCB-h7-for"/>
                                 </connections>
                             </webView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="m2Y-NK-jiO">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="m2Y-NK-jiO">
                                 <rect key="frame" x="142" y="265" width="37" height="37"/>
                                 <color key="color" red="1" green="0.3411764706" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="m2Y-NK-jiO" secondAttribute="centerY" id="5cO-lC-9oX"/>
+                            <constraint firstItem="VWy-Kj-LkX" firstAttribute="top" secondItem="uRm-b9-gxu" secondAttribute="top" id="8Tw-Zw-RAY"/>
+                            <constraint firstAttribute="centerX" secondItem="m2Y-NK-jiO" secondAttribute="centerX" id="DHC-HZ-KNL"/>
+                            <constraint firstAttribute="trailing" secondItem="VWy-Kj-LkX" secondAttribute="trailing" id="Hur-GA-TI9"/>
+                            <constraint firstItem="OFQ-z5-AS0" firstAttribute="top" secondItem="VWy-Kj-LkX" secondAttribute="bottom" id="muL-RM-Tto"/>
+                            <constraint firstItem="VWy-Kj-LkX" firstAttribute="leading" secondItem="uRm-b9-gxu" secondAttribute="leading" id="pnU-rx-FSt"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sell Your House" id="55q-Ga-UzE">
                         <barButtonItem key="backBarButtonItem" title="Estimate" id="9Xm-cs-CyJ"/>
