@@ -10,8 +10,11 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="House1-1024x695" translatesAutoresizingMaskIntoConstraints="NO" id="9G1-y2-4qo">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home Value Estimator" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
-                    <rect key="frame" x="20" y="135" width="441" height="43"/>
+                    <rect key="frame" x="20" y="218" width="441" height="43"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="43" id="NrC-aF-RoA"/>
                     </constraints>
@@ -19,20 +22,16 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="YnK-b4-Jm9">
-                    <rect key="frame" x="125" y="186" width="240" height="128"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="128" id="FEB-cG-kJF"/>
-                    </constraints>
-                </imageView>
             </subviews>
-            <color key="backgroundColor" red="1" green="0.3411764706" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="CRX-A8-cPN"/>
-                <constraint firstItem="YnK-b4-Jm9" firstAttribute="top" secondItem="kId-c2-rCX" secondAttribute="bottom" constant="8" symbolic="YES" id="FCh-ZQ-peD"/>
-                <constraint firstItem="YnK-b4-Jm9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="125" id="LLa-YC-G89"/>
-                <constraint firstItem="YnK-b4-Jm9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="186" id="T72-H5-GSw"/>
-                <constraint firstAttribute="trailing" secondItem="YnK-b4-Jm9" secondAttribute="trailing" constant="115" id="ciF-Us-eIs"/>
+                <constraint firstItem="9G1-y2-4qo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="HQB-w9-zxs"/>
+                <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="MYW-h9-7FU"/>
+                <constraint firstAttribute="trailing" secondItem="9G1-y2-4qo" secondAttribute="trailing" id="RGq-3o-mXi"/>
+                <constraint firstAttribute="centerY" secondItem="kId-c2-rCX" secondAttribute="centerY" id="XS5-bu-zkc"/>
+                <constraint firstItem="9G1-y2-4qo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="fT9-25-T3E"/>
+                <constraint firstAttribute="bottom" secondItem="9G1-y2-4qo" secondAttribute="bottom" id="gdE-Hb-o5B"/>
+                <constraint firstItem="kId-c2-rCX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="218" id="kut-E2-V2C"/>
                 <constraint firstItem="kId-c2-rCX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wsN-vZ-hH0"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -41,7 +40,7 @@
         </view>
     </objects>
     <resources>
-        <image name="icon" width="300" height="300"/>
+        <image name="House1-1024x695" width="943" height="640"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
