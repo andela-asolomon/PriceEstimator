@@ -116,7 +116,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cafeloisl" translatesAutoresizingMaskIntoConstraints="NO" id="3d7-kq-XjQ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cafeloisl" translatesAutoresizingMaskIntoConstraints="NO" id="3d7-kq-XjQ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Want to know the exact Cash Value or sell your house?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwH-cd-PXU">
@@ -166,9 +166,12 @@
                                     </label>
                                 </subviews>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4sH-iR-E01">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4sH-iR-E01">
                                 <rect key="frame" x="17" y="474" width="289" height="64"/>
                                 <color key="backgroundColor" red="1" green="0.3411764705882353" blue="0.078431372549019607" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="E2K-Ik-zG9"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="22"/>
                                 <state key="normal" title="Submit Online">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -180,6 +183,15 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="4sH-iR-E01" secondAttribute="trailing" constant="14" id="65Z-yM-BtN"/>
+                            <constraint firstItem="3d7-kq-XjQ" firstAttribute="top" secondItem="Rgv-aR-gfX" secondAttribute="top" id="Z4Z-A4-rGp"/>
+                            <constraint firstItem="4sH-iR-E01" firstAttribute="leading" secondItem="Rgv-aR-gfX" secondAttribute="leading" constant="17" id="fPg-yb-CB4"/>
+                            <constraint firstAttribute="trailing" secondItem="3d7-kq-XjQ" secondAttribute="trailing" id="nNu-PY-Qh1"/>
+                            <constraint firstItem="GlZ-KM-zBQ" firstAttribute="top" secondItem="4sH-iR-E01" secondAttribute="bottom" constant="30" id="qcx-m2-KVP"/>
+                            <constraint firstItem="GlZ-KM-zBQ" firstAttribute="top" secondItem="3d7-kq-XjQ" secondAttribute="bottom" id="sA7-4I-WAP"/>
+                            <constraint firstItem="3d7-kq-XjQ" firstAttribute="leading" secondItem="Rgv-aR-gfX" secondAttribute="leading" id="wdi-mP-YY2"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Cash Value" id="sL7-Ko-sTe">
                         <barButtonItem key="backBarButtonItem" title="Cash" id="7Ek-Nm-yHG"/>
