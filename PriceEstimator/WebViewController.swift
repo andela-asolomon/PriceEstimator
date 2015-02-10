@@ -37,14 +37,10 @@ class WebViewController: UIViewController {
     
     func webViewDidStartLoad(_: UIWebView) {
         activity.startAnimating()
-        
-        NSLog("Web view Start loading")
     }
     
     func webViewDidFinishLoad(_: UIWebView) {
         activity.stopAnimating()
-        
-        NSLog("Web view Finish loading")
     }
     
 }

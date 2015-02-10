@@ -31,7 +31,6 @@ class EstimatorAPI: UIViewController {
     func parseJSON(data: NSData) -> [String: AnyObject]? {
         var error: NSError?
         if let json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0), error: &error) as? [String: AnyObject] {
-            println("result: \(json)")
             return json
         } else if let error = error {
             println("JSON Error: \(error)")
@@ -73,7 +72,6 @@ class EstimatorAPI: UIViewController {
                             return
                         }
                     } else {
-                        println("response: \(response)")
                         self.delegate?.JSONAPIResults(httpResponse.statusCode)
                     }
                 }
