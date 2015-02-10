@@ -10,6 +10,8 @@
 		550E28CA1A7FCA6400ACB9BA /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550E28C91A7FCA6400ACB9BA /* Connectivity.swift */; };
 		554FCF3A1A69895300BDFF54 /* FormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554FCF391A69895300BDFF54 /* FormTableViewController.swift */; };
 		554FCF3C1A698A4500BDFF54 /* EstimatorAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554FCF3B1A698A4500BDFF54 /* EstimatorAPI.swift */; };
+		5565C3F81A8A51F3001D5C5A /* Estimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5565C3F71A8A51F3001D5C5A /* Estimate.swift */; };
+		5565C3FA1A8A6253001D5C5A /* StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5565C3F91A8A6253001D5C5A /* StatusCode.swift */; };
 		556FE3481A6949D80020519B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556FE3471A6949D80020519B /* AppDelegate.swift */; };
 		556FE34D1A6949D80020519B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556FE34B1A6949D80020519B /* Main.storyboard */; };
 		556FE34F1A6949D80020519B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 556FE34E1A6949D80020519B /* Images.xcassets */; };
@@ -33,6 +35,8 @@
 		550E28C91A7FCA6400ACB9BA /* Connectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		554FCF391A69895300BDFF54 /* FormTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTableViewController.swift; sourceTree = "<group>"; };
 		554FCF3B1A698A4500BDFF54 /* EstimatorAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimatorAPI.swift; sourceTree = "<group>"; };
+		5565C3F71A8A51F3001D5C5A /* Estimate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Estimate.swift; sourceTree = "<group>"; };
+		5565C3F91A8A6253001D5C5A /* StatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCode.swift; sourceTree = "<group>"; };
 		556FE3421A6949D80020519B /* PriceEstimator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PriceEstimator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		556FE3461A6949D80020519B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		556FE3471A6949D80020519B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 		550E28C61A7FC65C00ACB9BA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5565C3F71A8A51F3001D5C5A /* Estimate.swift */,
+				5565C3F91A8A6253001D5C5A /* StatusCode.swift */,
 				550E28C91A7FCA6400ACB9BA /* Connectivity.swift */,
 				554FCF3B1A698A4500BDFF54 /* EstimatorAPI.swift */,
 			);
@@ -251,8 +257,10 @@
 			files = (
 				554FCF3A1A69895300BDFF54 /* FormTableViewController.swift in Sources */,
 				55BD5AD01A6EAF370052571A /* WebViewController.swift in Sources */,
+				5565C3FA1A8A6253001D5C5A /* StatusCode.swift in Sources */,
 				550E28CA1A7FCA6400ACB9BA /* Connectivity.swift in Sources */,
 				55A86C511A6D717600250E3E /* OfferViewController.swift in Sources */,
+				5565C3F81A8A51F3001D5C5A /* Estimate.swift in Sources */,
 				556FE3481A6949D80020519B /* AppDelegate.swift in Sources */,
 				554FCF3C1A698A4500BDFF54 /* EstimatorAPI.swift in Sources */,
 			);
@@ -412,6 +420,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = PriceEstimatorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PriceEstimator.app/PriceEstimator";
@@ -427,6 +436,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = PriceEstimatorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PriceEstimator.app/PriceEstimator";

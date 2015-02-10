@@ -91,8 +91,13 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol, UITe
     
     func JSONAPIResults(results: AnyObject) {
         dispatch_async(dispatch_get_main_queue(), {
-            self.searchResultsData = results
-            self.offer = results["offer"] as? Int
+            println("ans : \(results)")
+            
+            if results as NSString == "Try Again" {
+                self.offer = nil
+            }
+            
+            self.offer = Int(results as NSNumber)
             self.performSegueWithIdentifier("showOffer", sender: nil)
         })
     }
@@ -122,26 +127,33 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol, UITe
         
     }
 
+    func statusCodeAlert(){
+        var alert = UIAlertController(title: "Oops", message: "We could not find the estimate for the house you are looking for. Please contact our customer service for more info.", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        var callAction = UIAlertAction(title: "(800)-288-0275", style: .Default) { (_) -> Void in
+            
+            let phone = "tel://(800)-288-0275";
+            let settingsUrl = NSURL(string: phone)
+            if let url = settingsUrl {
+                UIApplication.sharedApplication().openURL(url)
+            }
+        }
+        
+        alert.addAction(callAction)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "showOffer") {
             if let svc = segue.destinationViewController as? OfferViewController {
-                if self.offer == nil {
+                if self.offer == StatusCode.internalServerError {
                     activityIndicator.stopAnimating()
-                    var alert = UIAlertController(title: "Oops", message: "We could not find the estimate for the house you are looking for. Please contact our customer service for more info.", preferredStyle: UIAlertControllerStyle.Alert)
-                    
-                    var callAction = UIAlertAction(title: "(800)-288-0275", style: .Default) { (_) -> Void in
-                        
-                        let phone = "tel://(800)-288-0275";
-                        let settingsUrl = NSURL(string: phone)
-                        if let url = settingsUrl {
-                            UIApplication.sharedApplication().openURL(url)
-                        }
-                    }
-                    
-                    alert.addAction(callAction)
-                    alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
-                    self.presentViewController(alert, animated: true, completion: nil)
+                    statusCodeAlert()
+                } else if self.offer == nil {
+                    activityIndicator.stopAnimating()
+                    statusCodeAlert()
                 } else {
                     clearLabels()
                     svc.offer = Double(self.offer!)
