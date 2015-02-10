@@ -91,12 +91,6 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol, UITe
     
     func JSONAPIResults(results: AnyObject) {
         dispatch_async(dispatch_get_main_queue(), {
-            println("ans : \(results)")
-            
-            if results as NSString == "Try Again" {
-                self.offer = nil
-            }
-            
             self.offer = Int(results as NSNumber)
             self.performSegueWithIdentifier("showOffer", sender: nil)
         })
