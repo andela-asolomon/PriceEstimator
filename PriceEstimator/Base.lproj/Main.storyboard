@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Home Value Estimator-->
+        <!--Cash In Home-->
         <scene sceneID="sad-4b-U32">
             <objects>
                 <tableViewController id="CxN-IJ-8aX" customClass="FormTableViewController" customModule="PriceEstimator" customModuleProvider="target" sceneMemberID="viewController">
@@ -122,7 +122,7 @@
                             <outlet property="delegate" destination="CxN-IJ-8aX" id="Naj-l3-ZyD"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Home Value Estimator" id="Wv8-j6-jAv">
+                    <navigationItem key="navigationItem" title="Cash In Home" id="Wv8-j6-jAv">
                         <barButtonItem key="backBarButtonItem" title="Home" id="lzz-JX-3AS"/>
                     </navigationItem>
                     <connections>
