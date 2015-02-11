@@ -5,116 +5,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Cash In Home-->
-        <scene sceneID="sad-4b-U32">
-            <objects>
-                <tableViewController id="CxN-IJ-8aX" customClass="FormTableViewController" customModule="Cash_In_Home" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="uhN-1W-RGw">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="sectionIndexBackgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <sections>
-                            <tableViewSection id="Hff-xc-G4X">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="1" id="mO7-r3-WlS">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mO7-r3-WlS" id="acC-Od-OhK">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="181" id="ZXy-3e-rQv">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZXy-3e-rQv" id="Va9-rC-dyl">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="308" id="D9N-hd-VMf">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="D9N-hd-VMf" id="Q9E-aD-yzS">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YI4-ox-Zuc">
-                                                    <rect key="frame" x="19" y="34" width="344" height="22"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zip Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8q-ve-7dI">
-                                                    <rect key="frame" x="19" y="126" width="348" height="22"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Zip Code " minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1uS-19-Bmi">
-                                                    <rect key="frame" x="16" y="161" width="566" height="30"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad"/>
-                                                </textField>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="House Address Here" minimumFontSize="10" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="l6n-k1-LvY">
-                                                    <rect key="frame" x="16" y="69" width="566" height="30"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8c-uh-cNs">
-                                                    <rect key="frame" x="16" y="226" width="569" height="64"/>
-                                                    <color key="backgroundColor" red="1" green="0.34901960784313724" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="64" id="tUn-A1-zdl"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="22"/>
-                                                    <state key="normal" title="See Cash Value">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="checkItOutButton:" destination="CxN-IJ-8aX" eventType="touchUpInside" id="8cb-Gn-fW1"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <color key="tintColor" red="1" green="0.3411764706" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="y8c-uh-cNs" secondAttribute="trailing" constant="15" id="7PV-OH-maH"/>
-                                                <constraint firstAttribute="trailing" secondItem="YI4-ox-Zuc" secondAttribute="trailing" constant="237" id="Dd0-Ph-oib"/>
-                                                <constraint firstAttribute="trailing" secondItem="y8q-ve-7dI" secondAttribute="trailing" constant="233" id="O9c-mu-HSQ"/>
-                                                <constraint firstItem="1uS-19-Bmi" firstAttribute="leading" secondItem="Q9E-aD-yzS" secondAttribute="leading" constant="16" id="OaX-XK-1wZ"/>
-                                                <constraint firstItem="YI4-ox-Zuc" firstAttribute="leading" secondItem="Q9E-aD-yzS" secondAttribute="leading" constant="19" id="X1a-Bv-2Nx"/>
-                                                <constraint firstAttribute="trailing" secondItem="l6n-k1-LvY" secondAttribute="trailing" constant="18" id="Xpg-co-KIB"/>
-                                                <constraint firstAttribute="bottom" secondItem="y8c-uh-cNs" secondAttribute="bottom" constant="18" id="fh7-Zx-Gkn"/>
-                                                <constraint firstItem="l6n-k1-LvY" firstAttribute="top" secondItem="YI4-ox-Zuc" secondAttribute="bottom" constant="13" id="ghE-p2-fnX"/>
-                                                <constraint firstItem="y8q-ve-7dI" firstAttribute="leading" secondItem="Q9E-aD-yzS" secondAttribute="leading" constant="19" id="hrq-yh-4qM"/>
-                                                <constraint firstItem="y8c-uh-cNs" firstAttribute="top" secondItem="1uS-19-Bmi" secondAttribute="bottom" constant="35" id="igz-7E-e26"/>
-                                                <constraint firstItem="1uS-19-Bmi" firstAttribute="top" secondItem="y8q-ve-7dI" secondAttribute="bottom" constant="13" id="kmg-fY-A9h"/>
-                                                <constraint firstItem="y8c-uh-cNs" firstAttribute="leading" secondItem="Q9E-aD-yzS" secondAttribute="leading" constant="16" id="kvm-x7-NfT"/>
-                                                <constraint firstItem="y8q-ve-7dI" firstAttribute="top" secondItem="l6n-k1-LvY" secondAttribute="bottom" constant="27" id="phE-2I-myl"/>
-                                                <constraint firstItem="l6n-k1-LvY" firstAttribute="leading" secondItem="Q9E-aD-yzS" secondAttribute="leading" constant="16" id="s8l-te-d0e"/>
-                                                <constraint firstAttribute="trailing" secondItem="1uS-19-Bmi" secondAttribute="trailing" constant="18" id="saD-YR-XEK"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="CxN-IJ-8aX" id="gug-7l-t92"/>
-                            <outlet property="delegate" destination="CxN-IJ-8aX" id="Naj-l3-ZyD"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Cash In Home" id="Wv8-j6-jAv">
-                        <barButtonItem key="backBarButtonItem" title="Home" id="lzz-JX-3AS"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="addressLabel" destination="l6n-k1-LvY" id="v7t-BH-AxZ"/>
-                        <outlet property="btnLabel" destination="y8c-uh-cNs" id="pCO-wp-wWW"/>
-                        <outlet property="zipCodeLabel" destination="1uS-19-Bmi" id="0nn-Mt-v7h"/>
-                        <segue destination="Kw0-6a-FVD" kind="show" identifier="showOffer" id="wAt-ZO-iMh"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LKW-kw-8de" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1558" y="208"/>
-        </scene>
         <!--Cash Value-->
         <scene sceneID="QLp-CE-mol">
             <objects>
@@ -246,12 +136,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pYC-Y9-fSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3838" y="255"/>
+            <point key="canvasLocation" x="3594" y="271"/>
         </scene>
         <!--Cash In Home-->
         <scene sceneID="4xK-Mr-w9z">
             <objects>
-                <viewController id="MMM-JI-JC4" customClass="FormTableViewController" customModule="Cash_In_Home" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MMM-JI-JC4" customClass="HomeViewController" customModule="Cash_In_Home" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="F4K-fc-R0G"/>
                         <viewControllerLayoutGuide type="bottom" id="rlY-g4-g4f"/>
@@ -260,6 +150,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How much is your house worth in  cash?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMB-I0-g2d">
+                                <rect key="frame" x="200" y="200" width="200" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="I68-ym-Q4n"/>
+                                    <constraint firstAttribute="height" constant="59" id="dj9-uX-wHT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="9Ai-8a-HeZ">
                                 <rect key="frame" x="150" y="92" width="300" height="100"/>
                                 <constraints>
@@ -268,12 +167,6 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VU9-53-GBK">
                                 <rect key="frame" x="24" y="279" width="344" height="22"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zip Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKS-fx-FBb">
-                                <rect key="frame" x="24" y="371" width="68" height="22"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -303,16 +196,13 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="checkItOutButton:" destination="CxN-IJ-8aX" eventType="touchUpInside" id="CJa-UC-p3j"/>
+                                    <action selector="checkItOutButton:" destination="MMM-JI-JC4" eventType="touchUpInside" id="TPA-lj-NDv"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How much is your house worth in  cash?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMB-I0-g2d">
-                                <rect key="frame" x="200" y="200" width="200" height="59"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="I68-ym-Q4n"/>
-                                    <constraint firstAttribute="height" constant="59" id="dj9-uX-wHT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zip Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKS-fx-FBb">
+                                <rect key="frame" x="24" y="371" width="68" height="22"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -324,12 +214,10 @@
                             <constraint firstItem="rlY-g4-g4f" firstAttribute="top" secondItem="NMB-I0-g2d" secondAttribute="bottom" constant="341" id="7Id-rr-5gw"/>
                             <constraint firstItem="rAw-yS-MWE" firstAttribute="leading" secondItem="0IF-2O-AKB" secondAttribute="leading" constant="5" id="7cr-eU-oYB"/>
                             <constraint firstItem="rAw-yS-MWE" firstAttribute="leading" secondItem="j17-NL-Ls4" secondAttribute="leading" id="7dy-13-Cik"/>
-                            <constraint firstAttribute="trailing" secondItem="nKS-fx-FBb" secondAttribute="trailing" constant="508" id="7lQ-bZ-XNk"/>
                             <constraint firstItem="rlY-g4-g4f" firstAttribute="top" secondItem="0IF-2O-AKB" secondAttribute="bottom" constant="55" id="9GE-Hw-HhK"/>
-                            <constraint firstItem="nKS-fx-FBb" firstAttribute="leading" secondItem="dxx-3V-dgQ" secondAttribute="leading" constant="24" id="BfK-Rz-gkI"/>
                             <constraint firstAttribute="trailing" secondItem="rAw-yS-MWE" secondAttribute="trailing" constant="13" id="Frg-m2-cW0"/>
+                            <constraint firstItem="nKS-fx-FBb" firstAttribute="leading" secondItem="VU9-53-GBK" secondAttribute="leading" id="GNw-Ws-tAI"/>
                             <constraint firstItem="NMB-I0-g2d" firstAttribute="top" secondItem="9Ai-8a-HeZ" secondAttribute="bottom" constant="8" id="Iq7-rc-NzA"/>
-                            <constraint firstItem="VU9-53-GBK" firstAttribute="leading" secondItem="nKS-fx-FBb" secondAttribute="leading" id="Jsc-vg-DAf"/>
                             <constraint firstItem="0IF-2O-AKB" firstAttribute="top" secondItem="j17-NL-Ls4" secondAttribute="bottom" constant="45" id="LOJ-VJ-CZU"/>
                             <constraint firstItem="VU9-53-GBK" firstAttribute="leading" secondItem="dxx-3V-dgQ" secondAttribute="leadingMargin" constant="8" id="OF1-18-19M"/>
                             <constraint firstAttribute="trailing" secondItem="0IF-2O-AKB" secondAttribute="trailing" constant="15" id="SME-og-lFy"/>
@@ -338,7 +226,6 @@
                             <constraint firstItem="0IF-2O-AKB" firstAttribute="leading" secondItem="dxx-3V-dgQ" secondAttribute="leading" constant="16" id="f4c-bO-SVb"/>
                             <constraint firstAttribute="bottom" secondItem="rAw-yS-MWE" secondAttribute="bottom" constant="256" id="ggY-ix-I7k"/>
                             <constraint firstAttribute="trailing" secondItem="j17-NL-Ls4" secondAttribute="trailing" constant="13" id="hwk-Z2-OR3"/>
-                            <constraint firstItem="j17-NL-Ls4" firstAttribute="top" secondItem="nKS-fx-FBb" secondAttribute="bottom" constant="13" id="ig4-kt-yqp"/>
                             <constraint firstItem="rAw-yS-MWE" firstAttribute="leading" secondItem="dxx-3V-dgQ" secondAttribute="leading" constant="21" id="jYB-WK-dDp"/>
                             <constraint firstItem="nKS-fx-FBb" firstAttribute="top" secondItem="rAw-yS-MWE" secondAttribute="bottom" constant="27" id="k5a-P1-4XG"/>
                             <constraint firstAttribute="centerX" secondItem="9Ai-8a-HeZ" secondAttribute="centerX" id="qIW-9M-cRW"/>
@@ -350,12 +237,15 @@
                     </view>
                     <navigationItem key="navigationItem" title="Cash In Home" id="zf5-Rf-67H"/>
                     <connections>
+                        <outlet property="addressLabel" destination="rAw-yS-MWE" id="EEP-Cc-Q9j"/>
+                        <outlet property="btnLabel" destination="0IF-2O-AKB" id="ei4-iU-joq"/>
+                        <outlet property="zipCodeLabel" destination="j17-NL-Ls4" id="hEP-wq-PPu"/>
                         <segue destination="Kw0-6a-FVD" kind="show" identifier="showOffer" id="PzP-SG-HhJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aia-Qb-D3P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3248" y="203"/>
+            <point key="canvasLocation" x="2984" y="271"/>
         </scene>
         <!--Sell Your House-->
         <scene sceneID="I11-Lh-eZm">
@@ -401,22 +291,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wYb-io-d5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3849" y="241"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ZF4-a6-ylo">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ShO-XJ-pM2" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zIa-jv-urS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rRB-8C-PIY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1085.625" y="241.9014084507042"/>
+            <point key="canvasLocation" x="4207" y="277"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="j0c-VT-x2M">
@@ -434,15 +309,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ohR-jb-toY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2675" y="203"/>
+            <point key="canvasLocation" x="2353" y="271"/>
         </scene>
     </scenes>
     <resources>
         <image name="cafeloisl" width="640" height="640"/>
         <image name="icon" width="300" height="300"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="PzP-SG-HhJ"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.3411764706" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>
