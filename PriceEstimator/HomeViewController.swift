@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Ayoola Solomon. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class HomeViewController: UIViewController, EstimatorAPIProtocol, UITextFieldDelegate {
@@ -15,7 +16,6 @@ class HomeViewController: UIViewController, EstimatorAPIProtocol, UITextFieldDel
     @IBOutlet weak var zipCodeLabel: UITextField!
     
     var connectionIsAvailable : Connectivity = Connectivity()
-    var errorAlert: AlertViewController = AlertViewController()
     
     var api : EstimatorAPI = EstimatorAPI()
     var searchResultsData : AnyObject = []
@@ -46,9 +46,7 @@ class HomeViewController: UIViewController, EstimatorAPIProtocol, UITextFieldDel
             
             if connectionIsAvailable.isConnectedToNetwork() {
                 address = addressLabel.text
-                addressLabel.resignFirstResponder()
                 zipCode = zipCodeLabel.text.toInt()!
-                zipCodeLabel.resignFirstResponder()
                 
                 api.query(address!, zipCode: zipCode!)
                 activityIndicator.startAnimating()
@@ -70,21 +68,29 @@ class HomeViewController: UIViewController, EstimatorAPIProtocol, UITextFieldDel
         }
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        addressLabel.resignFirstResponder()
+        zipCodeLabel.resignFirstResponder()
+        return true
+    }
+    
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         
         var result = true
         
         let prospectiveText = (textField.text as NSString).stringByReplacingCharactersInRange(range, withString: string)
         
-        if countElements(string) > 0 {
-            let inverseSet = NSCharacterSet(charactersInString: "0123456789").invertedSet
-            let replaceStringIsLegal = string.rangeOfCharacterFromSet(inverseSet) == nil
-            
-            let resultingStringLengthIsLegal = countElements(prospectiveText) <= 5
-            
-            let components = string.componentsSeparatedByCharactersInSet(inverseSet)
-            
-            result = resultingStringLengthIsLegal && replaceStringIsLegal
+        if textField == zipCodeLabel {
+            if countElements(string) > 0 {
+                let inverseSet = NSCharacterSet(charactersInString: "0123456789").invertedSet
+                let replaceStringIsLegal = string.rangeOfCharacterFromSet(inverseSet) == nil
+                
+                let resultingStringLengthIsLegal = countElements(prospectiveText) <= 5
+                
+                let components = string.componentsSeparatedByCharactersInSet(inverseSet)
+                
+                result = resultingStringLengthIsLegal && replaceStringIsLegal
+            }
         }
         
         return result
@@ -110,6 +116,7 @@ class HomeViewController: UIViewController, EstimatorAPIProtocol, UITextFieldDel
         self.api.delegate = self
         
         zipCodeLabel.delegate = self
+        addressLabel.delegate = self
         
         activityIndicator.center = self.view.center
         activityIndicator.color = UIColor(red: 255.0/255.0, green: 89.0/255.0, blue: 20.0/255.0, alpha: 1)
@@ -129,9 +136,10 @@ class HomeViewController: UIViewController, EstimatorAPIProtocol, UITextFieldDel
         var message = ""
         
         if self.offer! == 0 {
-            message = "The Server encountered a temporary error and could not complete your request. Please try again later or contact our call center on (800)-288-0275."
+            
+            message = "We could not find the cash value for the property you are looking for. Please contact our customer service on (800)-288-0275 for more info."
         } else {
-            message = "We could not find the estimate for the house you are looking for. Please contact our customer service for more info."
+            message = "The Server encountered a temporary error and could not complete your request. Please try again later or contact our call center on (800)-288-0275."
         }
         
         var alert = UIAlertController(title: "Oops", message: message, preferredStyle: UIAlertControllerStyle.Alert)
@@ -170,5 +178,4 @@ class HomeViewController: UIViewController, EstimatorAPIProtocol, UITextFieldDel
             }
         }
     }
-
 }

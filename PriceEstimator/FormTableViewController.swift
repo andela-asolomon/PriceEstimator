@@ -15,7 +15,6 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol, UITe
     @IBOutlet weak var zipCodeLabel: UITextField!
     
     var connectionIsAvailable : Connectivity = Connectivity()
-    var errorAlert: AlertViewController = AlertViewController()
     
     var api : EstimatorAPI = EstimatorAPI()
     var searchResultsData : AnyObject = []

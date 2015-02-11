@@ -52,11 +52,12 @@ class EstimatorAPI: UIViewController {
         
         searchResults = Double()
         
-        let encodedTerm = (address as NSString).stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+        let encodedTerm = address.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
         let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
         
         dispatch_async(queue) {
             
+            // https://pure-reef-1653.herokuapp.com/estimate?address1=23%20Mauweehoo%20Hl&address2=&zip=06784
             let urlPath = "https://pure-reef-1653.herokuapp.com/estimate?address1=\(encodedTerm)&address2=&zip=\(zipCode)"
             let estimateUrl = NSURL(string: urlPath)
             let session = NSURLSession.sharedSession()
