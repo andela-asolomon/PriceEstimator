@@ -429,7 +429,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "Cash In HomeTests";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PriceEstimator.app/PriceEstimator";
+				TEST_HOST = "";
 			};
 			name = Debug;
 		};
@@ -445,7 +445,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "Cash In HomeTests";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PriceEstimator.app/PriceEstimator";
+				TEST_HOST = "";
 			};
 			name = Release;
 		};
