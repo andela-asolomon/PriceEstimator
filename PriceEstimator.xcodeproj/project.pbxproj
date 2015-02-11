@@ -17,6 +17,7 @@
 		556FE34F1A6949D80020519B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 556FE34E1A6949D80020519B /* Images.xcassets */; };
 		556FE3521A6949D80020519B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 556FE3501A6949D80020519B /* LaunchScreen.xib */; };
 		556FE35E1A6949D80020519B /* PriceEstimatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556FE35D1A6949D80020519B /* PriceEstimatorTests.swift */; };
+		55764F991A8B539400E47A2A /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55764F981A8B539400E47A2A /* AlertViewController.swift */; };
 		55A86C511A6D717600250E3E /* OfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A86C501A6D717600250E3E /* OfferViewController.swift */; };
 		55BD5AD01A6EAF370052571A /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD5ACF1A6EAF370052571A /* WebViewController.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,7 @@
 		556FE3571A6949D80020519B /* PriceEstimatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PriceEstimatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		556FE35C1A6949D80020519B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		556FE35D1A6949D80020519B /* PriceEstimatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceEstimatorTests.swift; sourceTree = "<group>"; };
+		55764F981A8B539400E47A2A /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		55A86C501A6D717600250E3E /* OfferViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferViewController.swift; sourceTree = "<group>"; };
 		55BD5ACF1A6EAF370052571A /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +96,7 @@
 				55BD5ACF1A6EAF370052571A /* WebViewController.swift */,
 				55A86C501A6D717600250E3E /* OfferViewController.swift */,
 				554FCF391A69895300BDFF54 /* FormTableViewController.swift */,
+				55764F981A8B539400E47A2A /* AlertViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				55BD5AD01A6EAF370052571A /* WebViewController.swift in Sources */,
 				5565C3FA1A8A6253001D5C5A /* StatusCode.swift in Sources */,
 				550E28CA1A7FCA6400ACB9BA /* Connectivity.swift in Sources */,
+				55764F991A8B539400E47A2A /* AlertViewController.swift in Sources */,
 				55A86C511A6D717600250E3E /* OfferViewController.swift in Sources */,
 				5565C3F81A8A51F3001D5C5A /* Estimate.swift in Sources */,
 				556FE3481A6949D80020519B /* AppDelegate.swift in Sources */,

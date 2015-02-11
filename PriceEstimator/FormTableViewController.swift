@@ -15,6 +15,7 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol, UITe
     @IBOutlet weak var zipCodeLabel: UITextField!
     
     var connectionIsAvailable : Connectivity = Connectivity()
+    var errorAlert: AlertViewController = AlertViewController()
     
     var api : EstimatorAPI = EstimatorAPI()
     var searchResultsData : AnyObject = []
@@ -122,7 +123,18 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol, UITe
     }
 
     func statusCodeAlert(){
-        var alert = UIAlertController(title: "Oops", message: "We could not find the estimate for the house you are looking for. Please contact our customer service for more info.", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        activityIndicator.stopAnimating()
+        
+        var message = ""
+        
+        if self.offer! == 0 {
+            message = "The Server encountered a temporary error and could not complete your request. Please try again later or contact our call center on (800)-288-0275."
+        } else {
+             message = "We could not find the estimate for the house you are looking for. Please contact our customer service for more info."
+        }
+        
+        var alert = UIAlertController(title: "Oops", message: message, preferredStyle: UIAlertControllerStyle.Alert)
         
         var callAction = UIAlertAction(title: "(800)-288-0275", style: .Default) { (_) -> Void in
             
@@ -142,11 +154,12 @@ class FormTableViewController: UITableViewController, EstimatorAPIProtocol, UITe
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "showOffer") {
             if let svc = segue.destinationViewController as? OfferViewController {
-                if self.offer == StatusCode.internalServerError {
-                    activityIndicator.stopAnimating()
+                if self.offer! == StatusCode.internalServerError {
                     statusCodeAlert()
                 } else if self.offer == nil {
-                    activityIndicator.stopAnimating()
+                    statusCodeAlert()
+                } else if self.offer! == 0 {
+                    clearLabels()
                     statusCodeAlert()
                 } else {
                     clearLabels()
