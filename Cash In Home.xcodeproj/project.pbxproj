@@ -38,13 +38,13 @@
 		554FCF3B1A698A4500BDFF54 /* EstimatorAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimatorAPI.swift; sourceTree = "<group>"; };
 		5565C3F71A8A51F3001D5C5A /* Estimate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Estimate.swift; sourceTree = "<group>"; };
 		5565C3F91A8A6253001D5C5A /* StatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCode.swift; sourceTree = "<group>"; };
-		556FE3421A6949D80020519B /* PriceEstimator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PriceEstimator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		556FE3421A6949D80020519B /* Cash In Home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cash In Home.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		556FE3461A6949D80020519B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		556FE3471A6949D80020519B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		556FE34C1A6949D80020519B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		556FE34E1A6949D80020519B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		556FE3511A6949D80020519B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		556FE3571A6949D80020519B /* PriceEstimatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PriceEstimatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		556FE3571A6949D80020519B /* Cash In HomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cash In HomeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		556FE35C1A6949D80020519B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		556FE35D1A6949D80020519B /* PriceEstimatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceEstimatorTests.swift; sourceTree = "<group>"; };
 		55764F981A8B539400E47A2A /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
@@ -104,8 +104,8 @@
 		556FE3391A6949D80020519B = {
 			isa = PBXGroup;
 			children = (
-				556FE3441A6949D80020519B /* PriceEstimator */,
-				556FE35A1A6949D80020519B /* PriceEstimatorTests */,
+				556FE3441A6949D80020519B /* Cash In Home */,
+				556FE35A1A6949D80020519B /* Cash In Home */,
 				556FE3431A6949D80020519B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,13 +113,13 @@
 		556FE3431A6949D80020519B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				556FE3421A6949D80020519B /* PriceEstimator.app */,
-				556FE3571A6949D80020519B /* PriceEstimatorTests.xctest */,
+				556FE3421A6949D80020519B /* Cash In Home.app */,
+				556FE3571A6949D80020519B /* Cash In HomeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		556FE3441A6949D80020519B /* PriceEstimator */ = {
+		556FE3441A6949D80020519B /* Cash In Home */ = {
 			isa = PBXGroup;
 			children = (
 				550E28C81A7FC67000ACB9BA /* Controller */,
@@ -129,6 +129,7 @@
 				556FE3501A6949D80020519B /* LaunchScreen.xib */,
 				556FE3451A6949D80020519B /* Supporting Files */,
 			);
+			name = "Cash In Home";
 			path = PriceEstimator;
 			sourceTree = "<group>";
 		};
@@ -140,12 +141,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		556FE35A1A6949D80020519B /* PriceEstimatorTests */ = {
+		556FE35A1A6949D80020519B /* Cash In Home */ = {
 			isa = PBXGroup;
 			children = (
 				556FE35D1A6949D80020519B /* PriceEstimatorTests.swift */,
 				556FE35B1A6949D80020519B /* Supporting Files */,
 			);
+			name = "Cash In Home";
 			path = PriceEstimatorTests;
 			sourceTree = "<group>";
 		};
@@ -160,9 +162,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		556FE3411A6949D80020519B /* PriceEstimator */ = {
+		556FE3411A6949D80020519B /* Cash In Home */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 556FE3611A6949D80020519B /* Build configuration list for PBXNativeTarget "PriceEstimator" */;
+			buildConfigurationList = 556FE3611A6949D80020519B /* Build configuration list for PBXNativeTarget "Cash In Home" */;
 			buildPhases = (
 				556FE33E1A6949D80020519B /* Sources */,
 				556FE33F1A6949D80020519B /* Frameworks */,
@@ -172,14 +174,14 @@
 			);
 			dependencies = (
 			);
-			name = PriceEstimator;
+			name = "Cash In Home";
 			productName = PriceEstimator;
-			productReference = 556FE3421A6949D80020519B /* PriceEstimator.app */;
+			productReference = 556FE3421A6949D80020519B /* Cash In Home.app */;
 			productType = "com.apple.product-type.application";
 		};
-		556FE3561A6949D80020519B /* PriceEstimatorTests */ = {
+		556FE3561A6949D80020519B /* Cash In HomeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 556FE3641A6949D80020519B /* Build configuration list for PBXNativeTarget "PriceEstimatorTests" */;
+			buildConfigurationList = 556FE3641A6949D80020519B /* Build configuration list for PBXNativeTarget "Cash In HomeTests" */;
 			buildPhases = (
 				556FE3531A6949D80020519B /* Sources */,
 				556FE3541A6949D80020519B /* Frameworks */,
@@ -190,9 +192,9 @@
 			dependencies = (
 				556FE3591A6949D80020519B /* PBXTargetDependency */,
 			);
-			name = PriceEstimatorTests;
+			name = "Cash In HomeTests";
 			productName = PriceEstimatorTests;
-			productReference = 556FE3571A6949D80020519B /* PriceEstimatorTests.xctest */;
+			productReference = 556FE3571A6949D80020519B /* Cash In HomeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -214,7 +216,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 556FE33D1A6949D80020519B /* Build configuration list for PBXProject "PriceEstimator" */;
+			buildConfigurationList = 556FE33D1A6949D80020519B /* Build configuration list for PBXProject "Cash In Home" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -227,8 +229,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				556FE3411A6949D80020519B /* PriceEstimator */,
-				556FE3561A6949D80020519B /* PriceEstimatorTests */,
+				556FE3411A6949D80020519B /* Cash In Home */,
+				556FE3561A6949D80020519B /* Cash In HomeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -283,7 +285,7 @@
 /* Begin PBXTargetDependency section */
 		556FE3591A6949D80020519B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 556FE3411A6949D80020519B /* PriceEstimator */;
+			target = 556FE3411A6949D80020519B /* Cash In Home */;
 			targetProxy = 556FE3581A6949D80020519B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -393,7 +395,7 @@
 				INFOPLIST_FILE = PriceEstimator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Cash In Home";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -406,7 +408,7 @@
 				INFOPLIST_FILE = PriceEstimator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Cash In Home";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -426,7 +428,7 @@
 				INFOPLIST_FILE = PriceEstimatorTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Cash In HomeTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PriceEstimator.app/PriceEstimator";
 			};
 			name = Debug;
@@ -442,7 +444,7 @@
 				INFOPLIST_FILE = PriceEstimatorTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Cash In HomeTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PriceEstimator.app/PriceEstimator";
 			};
 			name = Release;
@@ -450,7 +452,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		556FE33D1A6949D80020519B /* Build configuration list for PBXProject "PriceEstimator" */ = {
+		556FE33D1A6949D80020519B /* Build configuration list for PBXProject "Cash In Home" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				556FE35F1A6949D80020519B /* Debug */,
@@ -459,7 +461,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		556FE3611A6949D80020519B /* Build configuration list for PBXNativeTarget "PriceEstimator" */ = {
+		556FE3611A6949D80020519B /* Build configuration list for PBXNativeTarget "Cash In Home" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				556FE3621A6949D80020519B /* Debug */,
@@ -468,7 +470,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		556FE3641A6949D80020519B /* Build configuration list for PBXNativeTarget "PriceEstimatorTests" */ = {
+		556FE3641A6949D80020519B /* Build configuration list for PBXNativeTarget "Cash In HomeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				556FE3651A6949D80020519B /* Debug */,

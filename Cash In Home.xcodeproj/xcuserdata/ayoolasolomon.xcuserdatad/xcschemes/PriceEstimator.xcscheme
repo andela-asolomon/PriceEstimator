@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "556FE3411A6949D80020519B"
-               BuildableName = "PriceEstimator.app"
-               BlueprintName = "PriceEstimator"
-               ReferencedContainer = "container:PriceEstimator.xcodeproj">
+               BuildableName = "Cash In Home.app"
+               BlueprintName = "Cash In Home"
+               ReferencedContainer = "container:Cash In Home.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "556FE3561A6949D80020519B"
-               BuildableName = "PriceEstimatorTests.xctest"
-               BlueprintName = "PriceEstimatorTests"
-               ReferencedContainer = "container:PriceEstimator.xcodeproj">
+               BuildableName = "Cash In HomeTests.xctest"
+               BlueprintName = "Cash In HomeTests"
+               ReferencedContainer = "container:Cash In Home.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "556FE3561A6949D80020519B"
-               BuildableName = "PriceEstimatorTests.xctest"
-               BlueprintName = "PriceEstimatorTests"
-               ReferencedContainer = "container:PriceEstimator.xcodeproj">
+               BuildableName = "Cash In HomeTests.xctest"
+               BlueprintName = "Cash In HomeTests"
+               ReferencedContainer = "container:Cash In Home.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "556FE3411A6949D80020519B"
-            BuildableName = "PriceEstimator.app"
-            BlueprintName = "PriceEstimator"
-            ReferencedContainer = "container:PriceEstimator.xcodeproj">
+            BuildableName = "Cash In Home.app"
+            BlueprintName = "Cash In Home"
+            ReferencedContainer = "container:Cash In Home.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "556FE3411A6949D80020519B"
-            BuildableName = "PriceEstimator.app"
-            BlueprintName = "PriceEstimator"
-            ReferencedContainer = "container:PriceEstimator.xcodeproj">
+            BuildableName = "Cash In Home.app"
+            BlueprintName = "Cash In Home"
+            ReferencedContainer = "container:Cash In Home.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "556FE3411A6949D80020519B"
-            BuildableName = "PriceEstimator.app"
-            BlueprintName = "PriceEstimator"
-            ReferencedContainer = "container:PriceEstimator.xcodeproj">
+            BuildableName = "Cash In Home.app"
+            BlueprintName = "Cash In Home"
+            ReferencedContainer = "container:Cash In Home.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
