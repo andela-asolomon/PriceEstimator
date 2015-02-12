@@ -31,6 +31,7 @@ class HomeViewController: UIViewController, EstimatorAPIProtocol, UITextFieldDel
     
     @IBAction func checkItOutButton(sender: UIButton) {
         
+        view.endEditing(true)
         var errorField = ""
         
         if addressLabel.text == "" {
