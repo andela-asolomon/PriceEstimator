@@ -212,6 +212,7 @@ extension HomeViewController {
         var viewFrame : CGRect = self.view.frame
         viewFrame.origin.y -= animateDistance
         
+        
         UIView.beginAnimations(nil, context: nil)
         UIView.setAnimationBeginsFromCurrentState(true)
         UIView.setAnimationDuration(NSTimeInterval(MoveKeyboard.KEYBOARD_ANIMATION_DURATION))
