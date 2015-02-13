@@ -28,7 +28,6 @@ class WebViewController: UIViewController {
     
     func loadForm(zip : Int, address: String){
         let encodedTerm = (address as NSString).stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-        println("3: \(encodedTerm)")
         
         let requestUrl = NSURL(string: "http://soldtoday.com/app/?sub=app&zip=\(zip)&address=\(encodedTerm)")
         let request = NSURLRequest(URL: requestUrl!)

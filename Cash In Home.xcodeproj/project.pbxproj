@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		550E28CA1A7FCA6400ACB9BA /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550E28C91A7FCA6400ACB9BA /* Connectivity.swift */; };
 		5545D7331A8B7DA100DCDFC8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5545D7321A8B7DA100DCDFC8 /* HomeViewController.swift */; };
-		5545D7351A8BB1BB00DCDFC8 /* KeyboardAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5545D7341A8BB1BB00DCDFC8 /* KeyboardAnimation.swift */; };
-		554FCF3A1A69895300BDFF54 /* FormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554FCF391A69895300BDFF54 /* FormTableViewController.swift */; };
+		5545D7371A8CA1C900DCDFC8 /* MoveKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5545D7361A8CA1C900DCDFC8 /* MoveKeyboard.swift */; };
 		554FCF3C1A698A4500BDFF54 /* EstimatorAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554FCF3B1A698A4500BDFF54 /* EstimatorAPI.swift */; };
 		5565C3F81A8A51F3001D5C5A /* Estimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5565C3F71A8A51F3001D5C5A /* Estimate.swift */; };
 		5565C3FA1A8A6253001D5C5A /* StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5565C3F91A8A6253001D5C5A /* StatusCode.swift */; };
@@ -36,8 +35,7 @@
 /* Begin PBXFileReference section */
 		550E28C91A7FCA6400ACB9BA /* Connectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		5545D7321A8B7DA100DCDFC8 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		5545D7341A8BB1BB00DCDFC8 /* KeyboardAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardAnimation.swift; sourceTree = "<group>"; };
-		554FCF391A69895300BDFF54 /* FormTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTableViewController.swift; sourceTree = "<group>"; };
+		5545D7361A8CA1C900DCDFC8 /* MoveKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveKeyboard.swift; sourceTree = "<group>"; };
 		554FCF3B1A698A4500BDFF54 /* EstimatorAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimatorAPI.swift; sourceTree = "<group>"; };
 		5565C3F71A8A51F3001D5C5A /* Estimate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Estimate.swift; sourceTree = "<group>"; };
 		5565C3F91A8A6253001D5C5A /* StatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCode.swift; sourceTree = "<group>"; };
@@ -75,6 +73,7 @@
 		550E28C61A7FC65C00ACB9BA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5545D7361A8CA1C900DCDFC8 /* MoveKeyboard.swift */,
 				5565C3F71A8A51F3001D5C5A /* Estimate.swift */,
 				5565C3F91A8A6253001D5C5A /* StatusCode.swift */,
 				550E28C91A7FCA6400ACB9BA /* Connectivity.swift */,
@@ -97,9 +96,7 @@
 			children = (
 				55BD5ACF1A6EAF370052571A /* WebViewController.swift */,
 				55A86C501A6D717600250E3E /* OfferViewController.swift */,
-				554FCF391A69895300BDFF54 /* FormTableViewController.swift */,
 				5545D7321A8B7DA100DCDFC8 /* HomeViewController.swift */,
-				5545D7341A8BB1BB00DCDFC8 /* KeyboardAnimation.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -263,16 +260,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				554FCF3A1A69895300BDFF54 /* FormTableViewController.swift in Sources */,
 				55BD5AD01A6EAF370052571A /* WebViewController.swift in Sources */,
 				5565C3FA1A8A6253001D5C5A /* StatusCode.swift in Sources */,
 				550E28CA1A7FCA6400ACB9BA /* Connectivity.swift in Sources */,
 				5545D7331A8B7DA100DCDFC8 /* HomeViewController.swift in Sources */,
-				5545D7351A8BB1BB00DCDFC8 /* KeyboardAnimation.swift in Sources */,
 				55A86C511A6D717600250E3E /* OfferViewController.swift in Sources */,
 				5565C3F81A8A51F3001D5C5A /* Estimate.swift in Sources */,
 				556FE3481A6949D80020519B /* AppDelegate.swift in Sources */,
 				554FCF3C1A698A4500BDFF54 /* EstimatorAPI.swift in Sources */,
+				5545D7371A8CA1C900DCDFC8 /* MoveKeyboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,7 +391,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				INFOPLIST_FILE = PriceEstimator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -408,7 +404,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				INFOPLIST_FILE = PriceEstimator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
