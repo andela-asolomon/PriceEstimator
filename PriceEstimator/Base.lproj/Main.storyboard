@@ -157,7 +157,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="9Ai-8a-HeZ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="9Ai-8a-HeZ">
                                 <rect key="frame" x="150" y="92" width="300" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="NR0-iN-cmD"/>
@@ -240,7 +240,7 @@
                             <constraint firstItem="j17-NL-Ls4" firstAttribute="leading" secondItem="dxx-3V-dgQ" secondAttribute="leading" constant="21" id="qj7-oC-o6Z"/>
                             <constraint firstItem="rAw-yS-MWE" firstAttribute="leading" secondItem="dxx-3V-dgQ" secondAttribute="leadingMargin" constant="5" id="rer-2W-Dhq"/>
                             <constraint firstItem="NMB-I0-g2d" firstAttribute="centerX" secondItem="dxx-3V-dgQ" secondAttribute="centerX" id="sRm-eL-hRu"/>
-                            <constraint firstAttribute="width" secondItem="9Ai-8a-HeZ" secondAttribute="width" id="u2s-L2-Cq8"/>
+                            <constraint firstAttribute="width" secondItem="9Ai-8a-HeZ" secondAttribute="width" constant="300" id="u2s-L2-Cq8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rAw-yS-MWE" secondAttribute="trailing" constant="-3" id="xtG-9g-kXZ"/>
                         </constraints>
                     </view>
